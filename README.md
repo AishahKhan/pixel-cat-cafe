@@ -1,6 +1,6 @@
 # 🐾 Pixel Cat Café (Electron Edition)
 
-Welcome to **Pixel Cat Café** — a cozy desktop app where you care for your own pixel-perfect cat companion! Feed them, pet them, walk them, and watch their mood change with adorable animations and sounds — all within a cute café setting.
+Welcome to **Pixel Cat Café** — a cozy desktop app where you care for your own pixel-perfect cat companion! Feed them, pet them, walk them, and watch their mood change with adorable animations and sounds — all within a charming café setting.
 
 ---
 
