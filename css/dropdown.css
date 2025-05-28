@@ -1,0 +1,64 @@
+.top-bar {
+  position: absolute; /* or use fixed if you want it to always stay on screen */
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+
+
+.coin-display {
+  background-color: #fff0f6;
+  border: 2px solid #f9c2d1;
+  border-radius: 10px;
+  padding: 6px 12px;
+  width: 50px;
+  font-size: 18px;
+  box-shadow: 2px 2px 0 #f2a3b5;
+  font-family: 'VT323', monospace;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #fce4ec;
+  color: #333;
+  padding: 10px 16px;
+  font-family: 'VT323', monospace;
+  font-size: 18px;
+  border: 2px solid #f8a3c7;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #db5e96;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff0f5;
+  border: 1px solid #f8a3c7;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  min-width: 150px;
+  z-index: 101;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 12px;
+  text-decoration: none;
+  display: block;
+  font-family: 'VT323', monospace;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

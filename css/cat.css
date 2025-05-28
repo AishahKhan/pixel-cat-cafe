@@ -1,0 +1,93 @@
+/* cat.css */
+body {
+  background-image: url('../images/catbg3.png'); 
+  background-size: cover;        
+  background-repeat: no-repeat;  
+  background-color: #f9cee7;     
+  font-family: 'VT323', monospace;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #3f1d2c;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 248, 252, 0.6);
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+h1 {
+  font-family: 'Pixelify Sans', 'VT323', monospace;
+  font-size: 36px;
+  color: #a0324e;
+  text-shadow: 1px 1px 0 #fff;
+  margin-bottom: 40px;
+}
+
+
+.cat-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 100px 0 40px; 
+}
+
+
+.cat-options img {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #f27b9b;
+  border-radius: 12px;
+  padding: 8px;
+  cursor: pointer;
+background-color: rgba(255, 255, 255, 0.5); 
+
+  transition: transform 0.2s ease;
+  image-rendering: pixelated;
+}
+
+.cat-options img:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 4px 0 #a0324e;
+}
+
+button {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #f27b9b;
+  color: white;
+  border: 2px solid #a0324e;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 #502535;
+}
+
+button:hover {
+  background-color: #ff95ae;
+}
+
+.cat-title {
+  font-family: 'Pixelify Sans', 'VT323', monospace;
+  font-size: 36px;
+  color: #a0324e;
+  text-shadow: 1px 1px 0 #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.paw-icon {
+  width: 36px;
+  height: auto;
+  image-rendering: pixelated;
+}
+

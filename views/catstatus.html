@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Cat</title>
+  <link rel="stylesheet" href="../css/catstatus.css">
+  <link rel="stylesheet" href="../css/dropdown.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap" rel="stylesheet">
+  <style>
+    #pauseMusic {
+      position: fixed;
+      top: 10px;
+      right: 15px;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-family: 'VT323', monospace;
+      background-color: #ffe5ec;
+      border: 2px solid #ffaecf;
+      color: #333;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 #ff83b5;
+      transition: all 0.2s ease;
+      z-index: 9999; 
+    }
+
+    #pauseMusic:hover {
+      background-color: #ffcce1;
+      box-shadow: 2px 2px 0 #e35e94;
+      transform: scale(1.05);
+    }
+
+    body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div id="common-header"></div>
+
+  <div class="cat-status">
+    <div id="catWrapper" class="cat-wrapper rainbow-container">
+
+      <div class="cat-name-container">
+        <span id="catNameDisplay">Your Cat</span>
+        <button id="editCatNameBtn" title="Edit name">✏️</button>
+      </div>
+
+      <div id="nameInputWrapper" style="display: none;">
+        <input type="text" id="catNameInput" placeholder="Enter a name..." maxlength="20">
+        <button id="saveCatNameBtn">Save</button>
+      </div>
+
+      <div id="aura" class="rainbow-aura" style="display: none;"></div>
+
+      <img id="selectedCat" src="../images/cats/jiji.png" class="cat-status-image">
+      <div id="catDialogue" class="cat-dialogue-bubble"></div>
+
+    </div>
+  </div>
+
+  <div class="mood-container">
+    <label for="moodMeter">Mood:</label>
+    <progress id="moodMeter" value="50" max="100"></progress>
+    <span id="moodLabel">Neutral</span>
+  </div>
+
+  <div class="cat-interactions">
+    <button id="giveMilkBtn" class="milk-button">🥛 Give Milk</button>
+    <img id="milkImage" src="../images/milk.png" alt="Milk" style="display:none;" class="milk-offering">
+    <button id="givePetBtn" class="pet-button">🐈 Pet Cat</button>
+    <button id="walkBtn" class="walk-button">🚶 Walk Your Cat</button>
+  </div>
+
+  <div class="tracker-box">
+    <p>🥛 Milk: <span id="milkCount">0</span> / 4</p>
+    <p id="milkCooldown"></p>
+
+    <p>🐱 Pets: <span id="petCount">0</span> / 5</p>
+    <p id="petCooldown"></p>
+
+    <p>🐾 Walks today: <span id="walkCount">0</span> / 3</p>
+    <p id="walkCooldown"></p>
+  </div>
+
+  <script src="../js/catTracker.js"></script>
+  <script src="../js/foodEffects.js"></script>
+  <script src="../js/catstatus.js"></script>
+  <script src="../js/inventory.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/music.js"></script>
+
+
+
+  <Script>
+      document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const href = el.getAttribute('href');
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400);
+      }
+    });
+  });
+  </Script>
+</body>
+</html>

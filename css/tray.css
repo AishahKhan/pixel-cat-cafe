@@ -1,0 +1,265 @@
+/* General layout */
+body {
+  background-color: #fde4f2;
+  background-image: url('../images/traybg.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'VT323', monospace;
+  color: #402024;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-color: rgba(255, 248, 252, 0.6);
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Title */
+h1 {
+  font-size: 48px;
+  color: #b0476b;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 0 #fff;
+}
+
+h1::before,
+h1::after {
+  content: "🍰";
+  margin: 0 12px;
+  font-size: 32px;
+  vertical-align: middle;
+  animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* Tray List */
+#tray-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto 30px auto;
+  max-width: 500px;
+}
+
+#tray-list li {
+  background-color: #fff0f6;
+  margin: 12px auto;
+  padding: 12px 16px;
+  border: 2px solid #f9c2d1;
+  border-radius: 12px;
+  box-shadow: 3px 3px 0 #f2a3b5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  max-width: 400px;
+  justify-content: flex-start;
+}
+
+.tray-icon {
+  width: 40px;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+/* Buttons */
+button {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  padding: 10px 20px;
+  background-color: #fff0f5;
+  border: 2px solid #f9c2d1;
+  border-radius: 8px;
+  box-shadow: 2px 2px 0 #cb6b8f;
+  cursor: pointer;
+  margin: 10px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #ffe3ef;
+}
+
+.checkout-button {
+  margin-top: 20px;
+}
+
+.clear-button {
+  background-color: #fce7ef;
+}
+
+.remove-btn {
+  margin-left: auto;
+  font-size: 16px;
+  padding: 4px 8px;
+  background-color: #fcd9e5;
+  color: #a0324e;
+  border: 1px solid #a0657b;
+  border-radius: 6px;
+  box-shadow: 1px 1px 0 #a0657b;
+}
+
+.remove-btn:hover {
+  background-color: #ffe3ef;
+}
+
+/* Coin Display */
+.coin-display {
+  position: absolute;
+  top: 30px;
+  left: 20px;
+  font-size: 18px;
+  background-color: #ffeef5;
+  border: 2px solid #f9c2d1;
+  border-radius: 8px;
+  padding: 6px 12px;
+  box-shadow: 2px 2px 0 #f2a3b5;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #402024;
+}
+
+/* Tray Total */
+.tray-total {
+  font-size: 22px;
+  background-color: #fff8fa;
+  border: 2px solid #f9c2d1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0 #f2a3b5;
+  padding: 12px 20px;
+  margin-top: 20px;
+  display: inline-block;
+  color: #3f1d2c;
+}
+
+/* Floating Cat */
+.floating-cat {
+  position: fixed;
+  width: 80px;
+  height: auto;
+  image-rendering: pixelated;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.receipt-modal {
+  display: none;
+  position: fixed;
+  z-index: 9998;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.receipt-content {
+  position: relative;
+  background-color: #fff0f6;
+  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 24px 30px 20px;
+  border-radius: 20px;
+  max-width: 440px;
+  width: 90%;
+  font-family: 'VT323', monospace;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border: 3px solid #f9c2d1;
+  color: #5a2d3a;
+}
+
+.receipt-content h2 {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 14px;
+  color: #b0476b;
+}
+
+.receipt-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 250px;
+  overflow-y: auto;
+  border-top: 1px dashed #f9c2d1;
+  border-bottom: 1px dashed #f9c2d1;
+  padding: 10px 0;
+  margin-bottom: 12px;
+}
+
+.receipt-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.receipt-list img {
+  width: 48px;
+  height: auto;
+  margin-right: 8px;
+  vertical-align: middle;
+  image-rendering: pixelated;
+}
+
+#receiptTotal {
+  font-size: 20px;
+  text-align: center;
+  color: #802846;
+}
+
+.close-x {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 18px;
+  background-color: #ffcce1;
+  border: 2px solid #ffaecf;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  color: #5a2d3a;
+  box-shadow: 2px 2px 0 #ff83b5;
+  line-height: 24px;
+  text-align: center;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.close-x:hover {
+  background-color: #ffb3d1;
+  transform: scale(1.1);
+}
+
+#jiji-cat, #jiji-sleep {
+  position: fixed;
+  width: 80px;
+  height: auto;
+  pointer-events: none;
+  image-rendering: pixelated;
+  z-index: 1000;
+}
+
+.paw-print {
+  position: fixed;
+  width: 20px;
+  height: auto;
+  opacity: 1;
+  transition: opacity 1s ease;
+  z-index: 999;
+  pointer-events: none;
+}

@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'VT323', monospace;
+  background-image: url('../images/inventorybg.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-color: #fbe2ee;
+  color: #3f1d2c;
+}
+
+/* Top Menu + Coin Display */
+.top-left-controls {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  z-index: 10;
+}
+
+.coin-display {
+  font-size: 18px;
+  background-color: #fff0f4;
+  border: 2px solid #cc8899;
+  border-radius: 10px;
+  padding: 4px 12px;
+  box-shadow: 2px 2px 0 #c97c9b;
+}
+
+/* Title */
+.inventory-title {
+  text-align: center;
+  font-size: 42px;
+  color: #c34b6e;
+  margin-top: 80px;
+  text-shadow: 2px 2px #fff;
+  z-index: 1;
+  position: relative;
+}
+
+/* Inventory Grid */
+.inventory-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #ffe8f3dd;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  border-radius: 12px;
+  border: 2px solid #f2a3b5;
+  box-shadow: 4px 4px 0 #c97c9b;
+}
+
+
+/* Inventory Item Cards */
+.inventory-item {
+  width: 140px;
+  background-color: #fff0f6;
+  border: 2px solid #f9c2d1;
+  border-radius: 10px;
+  box-shadow: 2px 2px 0 #e294b2;
+  text-align: center;
+  padding: 12px 10px;
+  font-size: 18px;
+  position: relative;
+  font-family: 'VT323', monospace;
+}
+
+.inventory-item img {
+  width: 60px;
+  height: auto;
+  image-rendering: pixelated;
+  margin-bottom: 6px;
+}
+
+.item-name {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #c34b6e;
+  font-size: 18px;
+}
+
+.quantity-label {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background-color: #f9d0e4;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #9c2e4d;
+  border: 1px solid #e294b2;
+}
+
+/* Feed Button */
+.feed-button {
+  font-family: 'VT323', monospace;
+  background-color: #ffd1e3;
+  border: 2px solid #f2a3b5;
+  padding: 4px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 8px;
+  box-shadow: 2px 2px 0 #c97c9b;
+}
+
+.feed-button:hover {
+  background-color: #ffe6f0;
+}

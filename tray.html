@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Your Tray</title>
+    <link rel="stylesheet" href="tray.css">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="tray-header">
+        <div class="tray-buttons">
+            <button onclick="window.location.href='cat.html'" class="nav-button">Change Your Cat</button>
+            <button onclick="window.location.href='menu.html'" class="nav-button">Menu</button>
+            <button onclick="window.location.href='home.html'" class="nav-button">Exit</button>
+        </div>
+        <div class="coin-display">🪙 <span id="coinCount">0</span></div>
+    </div>
+
+
+    <h1>Your Tray</h1>
+
+
+    <ul id="tray-list"></ul>
+
+
+    <button id="clearTray" class="clear-button">🧹 Clear Tray</button>
+
+
+    <script src="tray.js"></script>
+</body>
+
+</html>

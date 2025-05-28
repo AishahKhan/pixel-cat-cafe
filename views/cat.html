@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Choose Cat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/cat.css">
+  <link rel="stylesheet" href="../css/dropdown.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    #pauseMusic {
+      position: fixed;
+      top: 10px;
+      right: 15px;
+      padding: 6px 12px;
+      font-size: 14px;
+      font-family: 'VT323', monospace;
+      background-color: #ffe5ec;
+      border: 2px solid #ffaecf;
+      color: #333;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 2px 2px 0 #ff83b5;
+      transition: all 0.2s ease;
+      z-index: 9999; 
+    }
+
+    #pauseMusic:hover {
+      background-color: #ffcce1;
+      box-shadow: 2px 2px 0 #e35e94;
+      transform: scale(1.05);
+    }
+
+    body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div id="common-header"></div>
+
+  <h1 class="cat-title">
+    <img src="../images/cats/pawprint.png" class="paw-icon">
+    Choose your cat!
+    <img src="../images/cats/pawprint.png" class="paw-icon">
+  </h1>
+
+  <div class="cat-options">
+    <img src="../images/cats/jiji.png" alt="Jiji" onclick="selectCat('jiji.png')">
+    <img src="../images/cats/latte.png" alt="Latte" onclick="selectCat('latte.png')">
+    <img src="../images/cats/sheroo.png" alt="Sheroo" onclick="selectCat('sheroo.png')">
+    <img src="../images/cats/gray.png" alt="Gray" onclick="selectCat('gray.png')">
+    <img src="../images/cats/ghost.png" alt="Ghost" onclick="selectCat('ghost.png')">
+  </div>
+
+  <script>
+    function selectCat(catFile) {
+      localStorage.setItem('chosenCat', catFile);
+      alert('Cat selected!');
+    }
+  </script>
+
+
+  <script src="../js/utils.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/music.js"></script>
+
+  <script>
+      document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const href = el.getAttribute('href');
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400);
+      }
+    });
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Your Tray</title>
+  <link rel="stylesheet" href="../css/tray.css">
+  <link rel="stylesheet" href="../css/dropdown.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+
+<style>
+  #pauseMusic {
+    all: unset;
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    background-color: #ffe5ec;
+    border: 2px solid #ffaecf;
+    font-family: 'VT323', monospace;
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 2px 2px 0 #ff83b5;
+    transition: all 0.2s ease;
+    z-index: 9999;
+  }
+
+  #pauseMusic:hover {
+    background-color: #ffcce1;
+    box-shadow: 2px 2px 0 #e35e94;
+    transform: scale(1.05);
+  }
+
+  body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+</style>
+<body>
+  <div id="common-header"></div>
+  <h1>Your Tray</h1>
+
+
+  <ul id="tray-list"></ul>
+  <div id="trayTotal" class="tray-total">Total: 🪙 0 coins</div>
+
+
+
+  <button id="clearTray" class="clear-button">🧹 Clear Tray</button>
+
+  <button id="checkoutBtn" class="checkout-button">🛒 Checkout</button>
+
+<div id="receiptModal" class="receipt-modal">
+  <div class="receipt-content">
+    <button id="closeReceipt" class="close-x">✖</button>
+    <h2>📜 Receipt</h2>
+    <ul id="receiptList" class="receipt-list"></ul>
+    <p id="receiptTotal"></p>
+  </div>
+</div>
+
+
+  
+  <img id="jiji-cat" class="floating-cat" src="../images/cats/jiji.png" alt="Cat">
+<img id="jiji-sleep" class="floating-cat" src="../images/cats/jiji_sleep.png" alt="Sleeping Cat" style="display: none;">
+
+
+
+
+<script src="../js/tray.js"></script>
+<script src="../js/catstatus.js"></script>
+<script src="../js/inventory.js"></script>
+<script src="../js/utils.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/music.js"></script>
+<script src="../js/script.js"></script>
+
+<Script>
+    document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const href = el.getAttribute('href');
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400);
+      }
+    });
+  });
+</Script>
+</body>
+
+</html>

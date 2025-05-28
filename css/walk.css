@@ -1,0 +1,193 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'VT323', monospace;
+  position: relative;
+
+  background-image: url('../images/walkbg.jpg'); 
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover; 
+  image-rendering: pixelated;
+}
+
+@keyframes scrollBg {
+  0% {
+    background-position: 0 bottom;
+  }
+  100% {
+    background-position: -1000px bottom;
+  }
+}
+
+
+body.day-bg {
+  background-image: url('../images/walkbg.jpg');
+  background-color: #87CEEB;
+}
+
+body.night-bg {
+  background-image: url('../images/walkbgnight.webp');
+  background-color: #1e1e40;
+}
+
+
+.top-bar {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  z-index: 100;
+  padding: 0 20px;
+}
+
+
+.music-btn {
+  font-size: 18px;
+  padding: 6px 10px;
+  background-color: #ffd3e0;
+  border: 2px solid #cc8899;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+.music-btn:hover {
+  background-color: #ffc2d4;
+}
+
+
+.theme-toggle {
+  font-size: 16px;
+  background-color: #ffd3e0;
+  border: 2px solid #cc8899;
+  border-radius: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+  z-index: 100;
+}
+.theme-toggle:hover {
+  background-color: #ffc2d4;
+}
+
+.coin-display {
+  font-size: 18px;
+  background-color: #fff0f4;
+  border: 2px solid #cc8899;
+  border-radius: 10px;
+  padding: 4px 12px;
+}
+
+#walking-cat {
+  width: 150px;
+  position: absolute;
+  top: 55%;
+  left: 0;
+  animation: walk 10s linear infinite;
+  z-index: 5;
+}
+@keyframes walk {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.walk-text {
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffd5e5;
+  border: 3px solid #ff8ea1;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 26px;
+  color: #4b2e2e;
+  font-family: 'VT323', monospace;
+  box-shadow: 0 0 0 3px #fff, 0 4px 0 #ff8ea1;
+  text-shadow: 1px 1px #fff;
+  z-index: 10;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.exit-btn {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  background-color: #f4a6b3;
+  border: 2px solid #d97d91;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+.butterfly {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('../images/butterfly.gif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: floatButterfly 5s linear forwards;
+  z-index: 20;
+  cursor: pointer;
+}
+
+
+@keyframes floatButterfly {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-200px) rotate(30deg);
+    left: 100vw;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeUp {
+  from { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  to { opacity: 0; transform: translate(-50%, -80%) scale(1.2); }
+}
+
+.walk-timer {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 22px;
+  color: #663333;
+  background-color: #ffe0eb;
+  border: 2px solid #ff99cc;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-family: 'VT323', monospace;
+  z-index: 50;
+  box-shadow: 0 0 0 3px #fff, 0 3px 0 #ffb6c1;
+}

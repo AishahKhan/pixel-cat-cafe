@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Walk Your Cat</title>
+  <link rel="stylesheet" href="../css/catstatus.css">
+  <link rel="stylesheet" href="../css/dropdown.css">
+  <link rel="stylesheet" href="../css/walk.css">
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+  <style>
+    #pauseMusic {
+      all: unset;
+      position: fixed;
+      top: 10px;
+      right: 15px;
+      font-family: 'VT323', monospace;
+      font-size: 14px;
+      padding: 6px 12px;
+      background-color: #ffe5ec;
+      border: 2px solid #ffaecf;
+      border-radius: 12px;
+      color: #333;
+      box-shadow: 2px 2px 0 #ff83b5;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 9999;
+    }
+
+    #pauseMusic:hover {
+      background-color: #ffcce1;
+      box-shadow: 2px 2px 0 #e35e94;
+      transform: scale(1.05);
+    }
+
+    body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+  </style>
+</head>
+
+<body class="day-bg">
+  <div id="common-header"></div>
+  <button id="themeToggle" class="theme-toggle">🌙 Night</button>
+  <button id="pauseMusic">⏸ Pause Music</button>
+
+  <audio id="walkMusic" autoplay loop>
+    <source id="musicSource" src="../sounds/walk.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <h1 class="walk-text">Walking your cat...</h1>
+  <div class="walk-timer" id="walkTimer">⏳ Walk time: 01:00</div>
+
+  <img id="walking-cat" src="../images/cats/jiji.png" alt="Walking Cat">
+
+  <script src="../js/walk.js"></script>
+  <script src="../js/utils.js"></script>
+  <script src="../js/storage.js"></script>
+
+  <script>
+      document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const href = el.getAttribute('href');
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400);
+      }
+    });
+  });
+  </script>
+</body>
+
+</html>

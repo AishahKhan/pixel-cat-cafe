@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Jiji’s Menu</title>
+  <link rel="stylesheet" href="../css/menu.css">
+  <link rel="stylesheet" href="../css/dropdown.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+</head>
+
+<style>
+#pauseMusic {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-family: 'VT323', monospace;
+  background-color: #ffe5ec;
+  border: 2px solid #ffaecf;
+  color: #333;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 #ff83b5;
+  transition: all 0.2s ease;
+  z-index: 9999; 
+}
+
+#pauseMusic:hover {
+  background-color: #ffcce1;
+  box-shadow: 2px 2px 0 #e35e94;
+  transform: scale(1.05);
+
+  body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+body.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+}
+
+
+
+</style>
+<body>
+
+
+  <div id="weather-toggle">
+    <button data-weather="sun">☀️</button>
+    <button data-weather="snow">❄️</button>
+    <button data-weather="rain">🌧️</button>
+  </div>
+  <div id="weather-overlay" class="weather"></div>
+
+<div id="common-header"></div>
+
+  
+<div class="menu-title">
+  <div class="bubble-title">
+    <h1>
+      <img src="../images/jijiface.png" class="banner-icon-inline">
+      Jiji’s Menu!
+    </h1>
+  </div>
+</div>
+
+
+
+  <div class="menu-page">
+    <div class="menu">
+
+      <div class="item">
+        <img src="../images/cake1.png" alt="Fruit Cake">
+        <p class="serve-trigger" data-item="Fruit Cake" data-img="../images/cake1.png" data-price="30">Fruit Cake</p>
+        <span class="price-tag">🪙 30 coins</span>
+      </div>
+
+
+      <div class="item">
+        <img src="../images/cake2.png" alt="Scone">
+        <p class="serve-trigger" data-item="Scone" data-img="../images/cake2.png" data-price="30">Scone</p>
+        <span class="price-tag">🪙 30 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/drink1.png" alt="Peach Soda">
+        <p class="serve-trigger" data-item="Peach Soda" data-img="../images/drink1.png" data-price="15">Peach Soda</p>
+        <span class="price-tag">🪙 15 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/pastry1.png" alt="Cinnamon Rolls">
+        <p class="serve-trigger" data-item="Cinnamon Rolls" data-img="../images/pastry1.png" data-price="30">Cinnamon
+          Rolls</p>
+        <span class="price-tag">🪙 30 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/breakfastplate.png" alt="breakfastplate">
+        <p class="serve-trigger" data-item="English Breakfast" data-img="../images/breakfastplate.png" data-price="30">
+          English Breakfast</p>
+        <span class="price-tag">🪙 30 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/pancake.gif" alt="Pancake">
+        <p class="serve-trigger" data-item="Pancake" data-img="../images/pancake.gif" data-price="30">Pancake</p>
+        <span class="price-tag">🪙 30 coins</span>
+      </div>
+
+
+      <div class="item">
+        <img src="../images/hotchocolate.png" alt="Hot chocolate">
+        <p class="serve-trigger" data-item="Hot Chocolate" data-img="../images/hotchocolate.png" data-price="20">Hot
+          chocolate</p>
+        <span class="price-tag">🪙 20 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/tea.png" alt="Tea">
+        <p class="serve-trigger" data-item="Tea" data-img="../images/tea.png" data-price="20">Tea</p>
+        <span class="price-tag">🪙 20 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/parfait.png" alt="Parfait">
+        <p class="serve-trigger" data-item="Parfait" data-img="../images/parfait.png" data-price="30">Parfait</p>
+        <span class="price-tag">🪙 30 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/swissroll.png" alt="Swiss Roll">
+        <p class="serve-trigger" data-item="Swiss Roll" data-img="../images/swissroll.png" data-price="30">Swiss Roll
+        </p>
+        <span class="price-tag">🪙 30 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/mocha.png" alt="Mocha">
+        <p class="serve-trigger" data-item="Mocha" data-img="../images/mocha.png" data-price="20">Mocha</p>
+        <span class="price-tag">🪙 20 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/Macarons.png" alt="Macarons">
+        <p class="serve-trigger" data-item="Macarons" data-img="../images/Macarons.png" data-price="30">Macarons</p>
+        <span class="price-tag">🪙 30 coins</span>
+      </div>
+
+      <div class="item">
+        <img src="../images/matcha.gif" alt="matcha">
+        <p class="serve-trigger" data-item="Matcha Latte" data-img="../images/matcha.gif" data-price="20">Matcha Latte</p>
+        <span class="price-tag">🪙 20 coins</span>
+      </div>
+
+
+      <div class="item">
+        <img src="../images/coffeefrappe.png" alt="coffeefrappe">
+        <p class="serve-trigger" data-item="Coffee Frappe" data-img="../images/coffeefrappe.png" data-price="15">Coffee
+          Frappe</p>
+        <span class="price-tag">🪙 15 coins</span>
+      </div>
+
+
+      <div class="item">
+        <img src="../images/melonsoda.gif" alt="melonsoda">
+        <p class="serve-trigger" data-item="Melon Soda" data-img="../images/melonsoda.gif" data-price="15">Melon Soda</p>
+        <span class="price-tag">🪙 15 coins</span>
+      </div>
+
+    </div>
+
+    <div class="popup" id="popup">
+      <div class="popup-content">
+        <span class="close-btn" id="closeBtn">×</span>
+        <h2 id="popupText">Item added to tray!!</h2>
+        <img id="popupImage" src="" alt="Served item">
+      </div>
+    </div>
+
+    <div class="exit-container">
+      <a href="home.html" class="exit-btn">← Exit</a>
+    </div>
+  </div>
+
+
+
+
+  <img src="../images/jiji.png" alt="Jiji" id="jiji-cat">
+  <img id="jiji-sleep" src="../images/jijisleep.png" alt="Sleeping Jiji" style="display: none;">
+
+
+  <div id="receiptModal" class="modal">
+    <div class="modal-content">
+      <span id="closeReceipt" class="close-btn">×</span>
+      <h2>Your Receipt</h2>
+      <ul id="receiptList"></ul>
+    </div>
+  </div>
+
+  <script src="../js/petCoins.js"></script>
+  <script src="../js/milkCoins.js"></script>
+  <script src="../js/script.js"></script>
+<script src="../js/foodEffects.js"></script> 
+<script src="../js/utils.js"></script>
+<script src="../js/storage.js"></script>
+<script src="../js/music.js"></script>
+
+<script>
+    document.querySelectorAll('a, button').forEach(el => {
+    el.addEventListener('click', (e) => {
+      const href = el.getAttribute('href');
+      if (href && !href.startsWith("#")) {
+        e.preventDefault();
+        document.body.classList.add('fade-out');
+        setTimeout(() => {
+          window.location.href = href;
+        }, 400);
+      }
+    });
+  });
+</script>
+
+</body>
+
+</html>
