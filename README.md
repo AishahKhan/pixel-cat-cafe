@@ -42,6 +42,3 @@ cd pixel-cat-cafe
 npm install
 npm start
 
-![inventory](https://github.com/user-attachments/assets/9c249e2d-5cd0-44d7-9564-366dcbddc926)
-![mood](https://github.com/user-attachments/assets/0551910a-777d-4833-8d69-16fe737de541)
-![tray](https://github.com/user-attachments/assets/a26cfc3e-7346-4cd2-a055-8829a38e458b)
